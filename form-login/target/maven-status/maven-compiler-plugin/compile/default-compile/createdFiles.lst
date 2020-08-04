@@ -1,0 +1,3 @@
+com\form\config\WebSecurityConfiguration.class
+com\form\FormApplication.class
+com\form\controller\FormController.class

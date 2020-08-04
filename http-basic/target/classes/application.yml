@@ -3,5 +3,5 @@ server:
 spring:
   security:
     user:
-      name: admin
-      password: admin
+      name: admin   # 配置默认账号
+      password: admin  # 配置默认密码

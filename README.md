@@ -10,3 +10,17 @@
 
 **http-basic：自定义账号密码**
 * 修改yml配置文件
+
+#### 模块二
+**form-login：表单验证模式**
+
+**需求**
+* admin可以访问/admin,/user等接口
+* user只可以访问/user接口
+* index对外开放，无需认证
+
+**WebSecurityConfiguration**
+
+此次对于用户认证使用内存，资源认证也需要对用户角色进行控制
+
+

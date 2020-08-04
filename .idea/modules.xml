@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/form-login/form-login.iml" filepath="$PROJECT_DIR$/form-login/form-login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/http-basic/http-basic.iml" filepath="$PROJECT_DIR$/http-basic/http-basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/security.iml" filepath="$PROJECT_DIR$/.idea/security.iml" />
+    </modules>
+  </component>
+</project>
