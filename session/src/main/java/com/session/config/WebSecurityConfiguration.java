@@ -1,5 +1,6 @@
 package com.session.config;
 
+import com.session.auth.MyExpireSessionStrategy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -19,11 +20,13 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .disable()
                 .formLogin()
                 .and()
+                .authorizeRequests().antMatchers("/session/session").hasAnyRole("ADMIN") //所有资源都需认证
+                .and()
                 .sessionManagement()
                 .invalidSessionUrl("/login")  // session过期跳转登录页
-                .and()
-                .authorizeRequests().antMatchers("/session/session").hasAnyRole("ADMIN"); //所有资源都需认证
-
+                .maximumSessions(1) //只允许一台设备进行登录
+                .maxSessionsPreventsLogin(false)
+                .expiredSessionStrategy(new MyExpireSessionStrategy());  // session过期或非法策略
     }
 
     // 用户授权认证

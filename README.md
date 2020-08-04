@@ -39,3 +39,8 @@
 * 在yml配置中可进行session过期配置
 * WebSecurityConfiguration中配置session过期的跳转路径
 
+**session多端登录问题**
+* 设置session过期或非法策略类**
+* webSecurityConfiguration中设置session最大只存在一个并设置session非法处理策略
+
+

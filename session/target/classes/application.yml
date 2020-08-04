@@ -2,4 +2,4 @@ server:
   port: 9004
   servlet:
     session:
-      timeout: 10s # session过期10秒，默认最少1m
+      timeout: 3600s # session过期10秒，默认最少1m
