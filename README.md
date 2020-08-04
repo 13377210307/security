@@ -23,4 +23,19 @@
 
 此次对于用户认证使用内存，资源认证也需要对用户角色进行控制
 
+#### 模块三
+**form-login-handle：自定义登录验证结果处理**
+
+对于前后端分离项目，期望响应结果为JSON而不是html
+
+#### 模块四
+**session**
+* always：如果当前请求没有session存在，springSecurity创建一个session。
+* never：springSecurity将永远不会主动创建session，但session已经存在，它将使用该session
+* ifRequire（默认）：springSecurity在需要时才创建session
+* stateless：springSecurity不会创建或使用任何session。适用于接口型的无状态应用，该方式节省资源
+
+**设置session过期时间**
+* 在yml配置中可进行session过期配置
+* WebSecurityConfiguration中配置session过期的跳转路径
 

@@ -10,6 +10,8 @@
     <modules>
         <module>http-basic</module>
         <module>form-login</module>
+        <module>form-login-handle</module>
+        <module>session</module>
     </modules>
     <packaging>pom</packaging>
 
