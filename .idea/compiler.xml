@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="form-login-handle" />
         <module name="form-login" />
+        <module name="jwt" />
         <module name="session" />
         <module name="http-basic" />
       </profile>
@@ -16,6 +17,7 @@
       <module name="form-login" target="1.8" />
       <module name="form-login-handle" target="1.8" />
       <module name="http-basic" target="1.8" />
+      <module name="jwt" target="1.8" />
       <module name="security" target="1.8" />
       <module name="session" target="1.8" />
       <module name="untitled" target="1.8" />
@@ -26,6 +28,7 @@
       <module name="form-login" options="-parameters" />
       <module name="form-login-handle" options="-parameters" />
       <module name="http-basic" options="-parameters" />
+      <module name="jwt" options="-parameters" />
       <module name="session" options="-parameters" />
       <module name="untitled" options="-parameters" />
     </option>

@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/form-login/form-login.iml" filepath="$PROJECT_DIR$/form-login/form-login.iml" />
       <module fileurl="file://$PROJECT_DIR$/form-login-handle/form-login-handle.iml" filepath="$PROJECT_DIR$/form-login-handle/form-login-handle.iml" />
       <module fileurl="file://$PROJECT_DIR$/http-basic/http-basic.iml" filepath="$PROJECT_DIR$/http-basic/http-basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jwt/jwt.iml" filepath="$PROJECT_DIR$/jwt/jwt.iml" />
       <module fileurl="file://$PROJECT_DIR$/security.iml" filepath="$PROJECT_DIR$/security.iml" />
       <module fileurl="file://$PROJECT_DIR$/session/session.iml" filepath="$PROJECT_DIR$/session/session.iml" />
     </modules>

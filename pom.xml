@@ -12,6 +12,7 @@
         <module>form-login</module>
         <module>form-login-handle</module>
         <module>session</module>
+        <module>jwt</module>
     </modules>
     <packaging>pom</packaging>
 
