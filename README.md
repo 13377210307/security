@@ -44,3 +44,19 @@
 * webSecurityConfiguration中设置session最大只存在一个并设置session非法处理策略
 
 
+#### 模块五
+**jwt**
+
+1：客户端发送/login请求进行登录
+
+2：JwtAuthenticationTokenFilter检查用户请求是否携带JWT令牌，并提取其中的用户名信息
+
+3：调用UserDetailService，通过重写UserDetailService中的loadUserByUsername方法将用户信息
+（用户名、密码、角色）加载出来交由security管理并赋值给User。
+
+4：JwtAuthenticationTokenFilter通过jwtUtils校验jwt令牌是否合法
+
+5：校验成功，通过角色权限进行访问资源
+
+
+

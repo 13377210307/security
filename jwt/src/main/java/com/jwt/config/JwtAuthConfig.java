@@ -3,7 +3,6 @@ package com.jwt.config;
 import com.jwt.entity.SysUser;
 import com.jwt.utils.JwtTokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -11,10 +10,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Configuration
@@ -33,8 +30,11 @@ public class JwtAuthConfig {
      * 登录认证换取token令牌
      */
     public String login(SysUser sysUser, HttpServletResponse response) {
+        //UsernamePasswordAuthenticationToken：基于用户名和密码的身份验证过滤器
         UsernamePasswordAuthenticationToken upToken = new UsernamePasswordAuthenticationToken(sysUser.getUsername(),sysUser.getPassword());
+
         Authentication authenticate = authenticationManager.authenticate(upToken);
+        //验证通过用户放入security上下文中
         SecurityContextHolder.getContext().setAuthentication(authenticate);
 
         // 使用用户名加载用户信息
@@ -55,11 +55,6 @@ public class JwtAuthConfig {
      */
     public String refreshToken(String oldToken, HttpServletResponse response) {
 
-        //从请求头中获取token
-        /*String oldToken = request.getHeader("Authorization");
-        if (StringUtils.isEmpty(oldToken)) {
-            return null;
-        }*/
         // 获取真正token
         String token = this.jwtTokenUtils.realToken(oldToken);
 

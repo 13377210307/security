@@ -5,7 +5,6 @@ import com.jwt.entity.SysUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
@@ -31,9 +30,14 @@ public class JwtController {
         return this.jwtAuthConfig.refreshToken(token,response);
     }
 
-    @GetMapping("/admin")
+    @GetMapping("/sysUser")
     public String admin() {
         return "admin测试成功";
+    }
+
+    @GetMapping("/userDetail")
+    public String user() {
+        return "user测试成功";
     }
 
 

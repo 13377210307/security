@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,11 +33,20 @@ public class MyUserDetailService implements UserDetailsService {
             return null;
         }
         //获取用户角色
-        String roles = "";
+        String roleKeys = "";
         List<SysRole> sysRoles = this.roleMapper.getRolesByUserId(sysUser.getId());
         if (!CollectionUtils.isEmpty(sysRoles)) {
-            roles = sysRoles.stream().map(SysRole::getKey).collect(Collectors.joining());
+            roleKeys = sysRoles.stream().map(SysRole::getKey).collect(Collectors.joining());
+
         }
-        return new User(name,sysUser.getPassword(),true,true,true,true, AuthorityUtils.commaSeparatedStringToAuthorityList(roles));
+
+        // 获取用户可访问资源
+        /*List<String> authorties = this.menuMapper.getResourcesByRoleKey(roleKeys);*/
+
+        //将角色加入
+        /*authorties.addAll(roleKeys);*/
+
+        return new User(name, sysUser.getPassword(), true,
+                true, true, true, AuthorityUtils.commaSeparatedStringToAuthorityList(roleKeys));
     }
 }

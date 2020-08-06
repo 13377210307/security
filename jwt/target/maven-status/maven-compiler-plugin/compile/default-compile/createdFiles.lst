@@ -1,12 +1,17 @@
 com\jwt\exception\CustomException.class
 com\jwt\JwtApplication.class
+com\jwt\mapper\MenuMapper.class
 com\jwt\service\MyUserDetailService.class
 com\jwt\entity\UserRole.class
+com\jwt\entity\SysMenu.class
 com\jwt\mapper\UserMapper.class
 com\jwt\controller\JwtController.class
 com\jwt\entity\SysRole.class
+com\jwt\service\PermissionService.class
 com\jwt\utils\JwtTokenUtils.class
 com\jwt\entity\SysUser.class
+com\jwt\filter\AuthenticationFilter.class
 com\jwt\config\WebSecurityConfiguration.class
 com\jwt\mapper\RoleMapper.class
 com\jwt\config\JwtAuthConfig.class
+com\jwt\entity\RoleMenu.class

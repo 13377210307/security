@@ -28,9 +28,11 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/jwt/jwt","/jwt/refresh").permitAll()
+                .antMatchers("/jwt/jwt","/jwt/refresh").permitAll()  // 所有角色都可进行访问
+                //.antMatchers("").authenticated()  // 表示用户认证成功之后即可访问
+                .anyRequest().access("@permissionService.hasPermission(request,authentication)")
                 .antMatchers("/jwt/admin").hasAnyRole("ADMIN")
-                .antMatchers("/jwt/user").hasAnyRole("USER")
+                .antMatchers("/jwt/user").hasAnyRole("USER","ADMIN")
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()

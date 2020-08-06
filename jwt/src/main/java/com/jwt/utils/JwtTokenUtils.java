@@ -15,7 +15,7 @@ public class JwtTokenUtils {
 
     private final String SECRET = "tokenSecret";
 
-    private final Long EXPIRATION = 1000L * 3600;  // 过期时间一小时
+    private final Long EXPIRATION = 1000L * 3600 * 24;  // 过期时间一天
 
 
     /**
