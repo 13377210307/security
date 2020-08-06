@@ -15,7 +15,7 @@ public class JwtTokenUtils {
 
     private final String SECRET = "tokenSecret";
 
-    private final Long EXPIRATION = 1000L * 3600;  // 过期时间一天
+    private final Long EXPIRATION = 1000L * 3600;  // 过期时间一小时
 
 
     /**
@@ -65,10 +65,17 @@ public class JwtTokenUtils {
     }
 
     /**
+     * 获取请求头中的真正token值
+     */
+    public String realToken(String head) {
+        return head.replace("Bearer ", "");
+    }
+
+    /**
      * 生成token
      */
     private String generateToken(Map<String,Object> claims) {
-        Date expirationDate = new Date(System.currentTimeMillis() * EXPIRATION);
+        Date expirationDate = new Date(System.currentTimeMillis() + EXPIRATION);
         return Jwts.builder().setClaims(claims)
                 .setExpiration(expirationDate)
                 .signWith(SignatureAlgorithm.HS256,SECRET)
@@ -82,4 +89,5 @@ public class JwtTokenUtils {
     private Claims getClaimByToken(String token) {
         return Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token).getBody();
     }
+
 }
